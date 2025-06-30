@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Press Info</title>
+</head>
+<body>
+
+    <h3>Press any key in the input below:</h3>
+    <input type="text" onkeydown="Ascii(event)" style="width:300px;">
+
+    <script>
+        function Ascii(event) {
+
+            if(event.key==="Alt")
+                alert("Alt key is pressed");
+            else if (event.key==="Control")
+                alert("Ctrl key is pressed");
+            else if (event.key==="Shift")
+                alert("Shift key is pressed");
+
+            else {
+                alert(`Ascii Code : ${event.keyCode}`);
+            }
+        }
+    </script>
+
+</body>
+</html>
