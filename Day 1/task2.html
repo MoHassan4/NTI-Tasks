@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    
+    <script>
+
+        //task 2
+        let promp  = prompt("Enter Your Birthday in this Format DD-MM-YYYY");
+        function getFormat(date){
+        let pattern = /^\d{2}-\d{2}-\d{4}$/;
+
+        if (promp.length==10){
+
+            if(pattern.test(date)){
+                let newdate = date.split("-");
+                newdate = String(newdate[2]+'-'+newdate[1]+'-'+newdate[0]);
+                const dateobj = new Date(newdate);
+                alert(dateobj.toLocaleDateString());
+            }else{
+                alert("Not Valid Date Format");
+            }
+
+        }else{
+            alert("Not Valid Date Length");
+        }
+        }
+
+        getFormat(promp);
+        /******************************************************************************************/
+
+
+        // Task 3
+
+        
+        function printDetails(){
+            let numofPersons = Number(prompt("Enter Number of Persons"));
+            let tablebody = document.getElementById("table-body");
+            for (let i = 0 ; i<numofPersons;i++){
+    
+              let name = prompt(`Enter Name of Person ${i+1} (Length Must be more than 3 and less than 10 Characters)`);
+                let age = Number(prompt(`Enter Age of Person ${i+1} (Age Must be more than 10 and less than 60 Years)`));
+
+                if ( (name.length > 3 && name.length <10) && (age>10 && age <60) ){
+                    let row = document.createElement("tr");
+                    let namecell = document.createElement("td");
+                    let agecell = document.createElement("td");
+                    namecell.innerText=name;
+                    agecell.innerText=String(age);
+        
+                    row.appendChild(namecell);
+                    row.appendChild(agecell);
+
+                    tablebody.appendChild(row);
+
+    }
+                else{
+                    alert(`Not Valid Data for Person ${i}`)
+    }
+}
+        }
+
+        printDetails();
+    </script>
+</body>
+</html>
