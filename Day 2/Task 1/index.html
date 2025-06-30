@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <button id="btn" type="button" onclick="clone()">Clone</button>
+
+
+    <script>
+        const btn = document.getElementById("btn");
+        
+        function clone(){
+            let divCLoned = document.createElement("div");
+            divCLoned.style.width= "100%";
+            divCLoned.style.height= "200px";
+            let randomRed = Math.round(Math.random()*100);
+            let randomGreen = Math.round(Math.random()*100);
+            let randomBlue = Math.round(Math.random()*100);
+            divCLoned.style.backgroundColor= `rgb(${randomRed},${randomGreen},${randomBlue})`;
+
+            document.body.appendChild(divCLoned);
+        }
+    </script>
+</body>
+</html>
