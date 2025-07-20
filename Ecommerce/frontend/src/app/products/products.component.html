@@ -1,0 +1,15 @@
+<!-- products.component.html -->
+<div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4">
+        <img [src]="product.image_url" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <input type="number" class="form-control mb-2" [(ngModel)]="product.quantity" placeholder="Quantity" min="1">
+          <button class="btn btn-primary w-100 mb-1" (click)="addToCart(product)">Add to Cart</button>
+          <a [href]="product.source_url" target="_blank" class="btn btn-secondary w-100">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
